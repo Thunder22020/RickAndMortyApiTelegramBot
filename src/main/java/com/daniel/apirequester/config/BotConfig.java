@@ -16,11 +16,12 @@ public class BotConfig {
     @SneakyThrows
     public TelegramBot telegramBot(
             @Value("${bot.token}") String botToken,
+            @Value("${bot.name}") String botName,
             DefaultBotOptions options,
             TelegramBotsApi telegramBotsApi,
             ApiService apiService
     ) {
-        var bot = new TelegramBot(options, botToken, apiService);
+        var bot = new TelegramBot(options, botToken, apiService, botName);
         telegramBotsApi.registerBot(bot);
         return bot;
     }

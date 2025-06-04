@@ -16,14 +16,17 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class TelegramBot extends TelegramLongPollingBot {
     private final ApiService apiService;
+    private final String botName;
 
     public TelegramBot(
             DefaultBotOptions options,
             String botToken,
-            ApiService apiService
+            ApiService apiService,
+            String botName
     ) {
         super(options, botToken);
         this.apiService = apiService;
+        this.botName = botName;
     }
 
     private void sendSafeMessage(String chatId, String text) {
@@ -122,6 +125,6 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return "javaspring12_bot";
+        return botName;
     }
 }
