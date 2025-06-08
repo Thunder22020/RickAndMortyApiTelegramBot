@@ -1,11 +1,12 @@
 # Rick and Morty Telegram Bot
 
-A simple Spring Boot-based Telegram bot that interacts with the [Rick and Morty API](https://rickandmortyapi.com) to retrieve and display character and location data.
+A simple Spring Boot-based Telegram bot that interacts with the [Rick and Morty API](https://rickandmortyapi.com) to retrieve and display character and location data, also it stores the history of user commands.
 
 ## 🚀 Features
 
 - Get information and image of a character by ID
 - Get information about a location by ID
+- Stores users and their message history in DB
 - Asynchronous command handling
 - Uses `RestClient` to fetch data from external API
 
