@@ -13,6 +13,7 @@ A simple Spring Boot-based Telegram bot that interacts with the [Rick and Morty 
 
 - `/person <id>` — Fetches character info (name, origin, status, species) and photo.
 - `/location <id>` — Fetches location info (name, dimension, type).
+- `/get_command_history` — Fetches history of commands that current user have written.
 
 ## 🛠️ Technologies Used
 
@@ -21,6 +22,7 @@ A simple Spring Boot-based Telegram bot that interacts with the [Rick and Morty 
 - TelegramBots API
 - RestClient (Spring)
 - Lombok
+- JPA & Hibernate, PostgreSQL
 
 ## 🧠 Project Structure
 
@@ -32,7 +34,7 @@ src/
             └── apirequester/
                 ├── bot/          # Telegram-бот
                 ├── config/       # Конфигурации приложения
-                ├── controller/   # REST-контроллеры
+                ├── controller/   # REST-контроллер
                 ├── model/        # Модели
                 ├── service/      # Сервисный слой (взаимодействие с API)
                 └── ApiRequesterApplication.java  # Главный класс Spring Boot

@@ -1,5 +1,7 @@
 package com.daniel.apirequester.config;
 
+import com.daniel.apirequester.service.UserMessageService;
+import com.daniel.apirequester.service.UserService;
 import lombok.SneakyThrows;
 import com.daniel.apirequester.bot.TelegramBot;
 import com.daniel.apirequester.service.ApiService;
@@ -19,9 +21,11 @@ public class BotConfig {
             @Value("${bot.name}") String botName,
             DefaultBotOptions options,
             TelegramBotsApi telegramBotsApi,
-            ApiService apiService
+            ApiService apiService,
+            UserService userService,
+            UserMessageService userMessageService
     ) {
-        var bot = new TelegramBot(options, botToken, apiService, botName);
+        var bot = new TelegramBot(options, botToken, apiService, botName, userService, userMessageService);
         telegramBotsApi.registerBot(bot);
         return bot;
     }
